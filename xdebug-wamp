@@ -1,0 +1,42 @@
+### JSON config file - after you install xdebug extenation you need to add this lines instaed of auto generated config file. or you can edit the current one. do what you like
+
+
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Listen for XDebug",
+            "type": "php",
+            "request": "launch",
+            "port": 9000
+        },
+        {
+            "name": "Launch currently open script",
+            "type": "php",
+            "request": "launch",
+            "program": "${file}",
+            "cwd": "${fileDirname}",
+            "port": 9000,
+            "runtimeExecutable": "C:\\wamp64\\bin\\php\\php8.1.13\\php.exe"
+        }
+    ]
+}
+
+
+
+### php.ini
+[xdebug]
+xdebug.mode = debug
+xdebug.start_with_request = yes
+zend_extension = "c:/wamp64/bin/php/php8.1.13/ext/php_xdebug.dll"
+xdebug.stopOnEntry = true
+xdebug.profiler_enable = off
+xdebug.profiler_enable_trigger = Off
+xdebug.profiler_output_name = cachegrind.out.%t.%p
+xdebug.output_dir ="c:/wamp64/tmp"
+xdebug.show_local_vars=0
+xdebug.remote_handler = "dbgp"
+xdebug.client_host = "127.0.0.1"
+xdebug.log="c:/wamp64/logs/xdebug.log"
+xdebug.client_port = 9000
+xdebug.remote_cookie_expire_time = 36000
